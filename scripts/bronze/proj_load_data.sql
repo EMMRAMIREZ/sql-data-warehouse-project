@@ -1,4 +1,19 @@
 -- Loads data into all 6 tables, code will check that any exsisting data is removed beofre importing data to prevent duplicates 
+/*
+============================================================================
+Load Data: Load Bronze Layers (Source -> Bronze)
+============================================================================
+Script Purpose:
+This script loads data into the 'bronze' database from external CSV files.
+It performs the following actions:
+ - Truncates the bronze tables before loading data.
+ - Uses the 'LOAD DATA LOCAL INFILE' command to load data from local csv files 
+  into the bronze tables.
+
+============================================================================
+*/
+
+
 
 TRUNCATE TABLE bronze.crm_cust_info;
 LOAD DATA LOCAL INFILE '/Users/emilyramirez/Documents/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
